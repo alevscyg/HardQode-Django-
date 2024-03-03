@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div>
+        <h1>Курсы</h1>
+        {% if products %}
+            {% for el in products %}
+                <div>
+                    <h3>{{ el.product_name }}</h3>
+                    <p>Регистрация до {{ el.date }}</p>
+                    <p>Цена {{ el.price }} руб</p>
+                </div>
+            {% endfor %}
+            <a href="http://127.0.0.1:8000/auth">Зарегистрироваться на курсы</a>
+        {% else %}
+                <p>Продукты отсутствуют</p>
+        {% endif %}
+    </div>
+{% endblock %}
